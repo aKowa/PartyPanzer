@@ -13,6 +13,11 @@ public class GameController : MonoBehaviour {
 	public Text resetTimer2;
 	private bool isResetting = false;
 
+	void Awake()
+	{
+		Screen.fullScreen = true;
+	}
+
 	void Start () 
 	{
 		DisplayStartScreen();
