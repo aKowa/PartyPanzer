@@ -17,9 +17,9 @@ public class MissileController : MonoBehaviour {
 		{
 			Destroy(this.gameObject);
 		} 
-		else if (other.tag == "Player" || other.tag == "Player2")
+		else if (other.tag == "Player1" || other.tag == "Player2")
 		{
-			print("hit");
+			print(playerTag + " hit " + other.tag);
 		}
     }
 
