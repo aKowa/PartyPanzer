@@ -16,10 +16,6 @@ public class MissileController : MonoBehaviour {
 		if(other.tag != playerTag && other.tag != "Border")
 		{
 			Destroy(this.gameObject);
-		} 
-		else if (other.tag == "Player1" || other.tag == "Player2")
-		{
-			print(playerTag + " hit " + other.tag);
 		}
     }
 
