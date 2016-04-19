@@ -27,7 +27,6 @@ public class MovementController : MonoBehaviour
     {
         if (Input.GetKey(left) && Input.GetKey(right))
         {
-//            transform.position += transform.up * moveSpeed * Time.deltaTime;
 			Vector3 targetPosition = transform.position + transform.up * moveSpeed * Time.deltaTime;
 			targetPosition.x = Mathf.Clamp(targetPosition.x, -6.32f, 3.32f);
 			targetPosition.y = Mathf.Clamp(targetPosition.y, -4.7f, 4.7f);
