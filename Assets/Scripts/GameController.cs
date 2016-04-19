@@ -1,13 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
 
 	public Buttons buttons;
 	public GameObject startScreen;
 	public GameObject winScreen;
-//	public float timeToReset = 1f;
-
+	public float timeToStartScreen = 2f;
+	public float timeToReset = 2f;
+	public Text resetTimer1;
+	public Text resetTimer2;
 	private bool isResetting = false;
 
 	void Start () 
@@ -15,6 +18,8 @@ public class GameController : MonoBehaviour {
 		DisplayStartScreen();
 		winScreen.SetActive(false);
 		isResetting = false;
+		resetTimer1.gameObject.SetActive(false);
+		resetTimer2.gameObject.SetActive(false);
 	}
 
 	void Update()
@@ -31,7 +36,8 @@ public class GameController : MonoBehaviour {
 		{
 			if (isResetting)
 			{
-				Application.LoadLevel(0);
+				StopAllCoroutines();
+				Application.LoadLevel(Random.Range(0, Application.levelCount));
 			}
 			else if (Time.timeScale  < 1)
 			{
@@ -74,14 +80,27 @@ public class GameController : MonoBehaviour {
 	{
 		isResetting = true;
 
-		yield return new WaitForSeconds(1);
+		for ( float i=timeToStartScreen; i >= 0; i -= 1/60f)
+		{
+			yield return null;
+		}
 
 		DisplayStartScreen();
+
+		resetTimer1.gameObject.SetActive(true);
+		resetTimer2.gameObject.SetActive(true);
+		for ( float i=timeToReset; i >= 0; i -= 1/60f)
+		{
+			string s = ((int)i).ToString();
+			resetTimer1.text = s;
+			resetTimer2.text = s;
+			yield return null;
+		}
+		resetTimer1.gameObject.SetActive(false);
+		resetTimer2.gameObject.SetActive(false);
+
 		isResetting = false;
-
-		yield return new WaitForSeconds(1);
-
 		print("reset game"); 
-		Application.LoadLevel(0);
+		Application.LoadLevel(Random.Range(0, Application.levelCount));
 	}
 }
