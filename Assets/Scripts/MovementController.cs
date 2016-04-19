@@ -14,8 +14,8 @@ public class MovementController : MonoBehaviour
 
     void Awake()
     {
-        leftRotator = transform.FindChild("left_rotator");
-        rightRotator = transform.FindChild("right_rotator");
+		leftRotator = transform.FindChild("left_tread");
+		rightRotator = transform.FindChild("right_tread");
 
         if ( leftRotator == null || rightRotator == null )
         {
@@ -27,18 +27,20 @@ public class MovementController : MonoBehaviour
     {
         if (Input.GetKey(left) && Input.GetKey(right))
         {
-            transform.position += transform.up * moveSpeed * Time.deltaTime;
+//            transform.position += transform.up * moveSpeed * Time.deltaTime;
+			Vector3 targetPosition = transform.position + transform.up * moveSpeed * Time.deltaTime;
+			targetPosition.x = Mathf.Clamp(targetPosition.x, -6.32f, 3.32f);
+			targetPosition.y = Mathf.Clamp(targetPosition.y, -4.7f, 4.7f);
+			transform.position = targetPosition;
         }
 
         if (Input.GetKey(left))
         {
-//          transform.RotateAround(rightRotator.position, Vector3.back, rotateSpeed * Time.deltaTime);
 			transform.Rotate(Vector3.back, rotateSpeed * Time.deltaTime);
         }
 
         if (Input.GetKey(right))
         {
-//			transform.RotateAround(leftRotator.position, Vector3.back, -1 * rotateSpeed * Time.deltaTime);
 			transform.Rotate(Vector3.back, -1 * rotateSpeed * Time.deltaTime);
         }
     }

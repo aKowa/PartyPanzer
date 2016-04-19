@@ -12,7 +12,7 @@ public class FireController : MonoBehaviour {
 
     protected void Awake()
     {
-        launcher = transform.FindChild("launcher");
+		launcher = transform.FindChild("launch_point");
 
         if (launcher == null)
         {
