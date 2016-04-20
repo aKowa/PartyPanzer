@@ -6,11 +6,11 @@ public class FireController : MonoBehaviour {
     public KeyCode fire = KeyCode.W;
     public float fireRate = 1F;
     public GameObject missile;
-
     private Transform launcher;
     private bool canFire = true;
+	private Animator anim;
 
-    protected void Awake()
+    void Awake()
     {
 		launcher = transform.FindChild("launch_point");
 
@@ -18,10 +18,16 @@ public class FireController : MonoBehaviour {
         {
             Debug.LogError("Could not find launcher");
         }
+
+		anim = GetComponent<Animator>();
+		if (anim == null)
+		{
+			Debug.LogError("Could not get animator. Not assigned on: " + this.gameObject.name + "?");
+		}
     }
 
 
-    protected void Update()
+    void Update()
     {
         if (Input.GetKeyDown(fire))
         {
@@ -31,6 +37,7 @@ public class FireController : MonoBehaviour {
                 GameObject clone = Instantiate(missile, launcher.position, launcher.rotation) as GameObject;
                 MissileController ms = clone.GetComponent<MissileController>();
                 ms.playerTag = this.tag;
+				anim.Play("TankFire");
             }
         }
     }
