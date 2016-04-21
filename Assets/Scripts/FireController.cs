@@ -26,7 +26,6 @@ public class FireController : MonoBehaviour {
 		}
     }
 
-
     void Update()
     {
         if (Input.GetKeyDown(fire))
@@ -37,7 +36,7 @@ public class FireController : MonoBehaviour {
                 GameObject clone = Instantiate(missile, launcher.position, launcher.rotation) as GameObject;
                 MissileController ms = clone.GetComponent<MissileController>();
                 ms.playerTag = this.tag;
-				anim.Play("TankFire");
+				anim.Play("TankFire",1);
             }
         }
     }
