@@ -37,7 +37,7 @@ public class MovementController : MonoBehaviour
 			transform.position = targetPosition;
 			anim.SetBool("LeftTread", true);
 			anim.SetBool("RightTread", true);
-		} 
+		}
 		else if (anim.GetBool("LeftTread") && anim.GetBool("RightTread"))
 		{
 			anim.SetBool("LeftTread", false);
