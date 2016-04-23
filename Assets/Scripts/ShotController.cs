@@ -14,8 +14,12 @@ public class ShotController : MonoBehaviour {
 	{
 		if (other.tag == "Missile")
 		{
-			Destroy(this.gameObject);
-			lc.UpdateLife(); 
+			MissileController mc = other.GetComponent<MissileController>();
+			if (mc.playerTag != this.transform.parent.tag)
+			{
+				Destroy(this.gameObject);
+				lc.UpdateLife(); 
+			}
 		}
 	}
 }
