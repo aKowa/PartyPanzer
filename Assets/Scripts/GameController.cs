@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
 
@@ -42,7 +43,8 @@ public class GameController : MonoBehaviour {
 			if (isResetting)
 			{
 				StopAllCoroutines();
-				Application.LoadLevel(Random.Range(0, Application.levelCount));
+				SceneManager.LoadScene(Random.Range(0, SceneManager.sceneCountInBuildSettings));
+//				Application.LoadLevel(Random.Range(0, Application.levelCount));
 			}
 			else if (Time.timeScale  < 1)
 			{
@@ -106,6 +108,6 @@ public class GameController : MonoBehaviour {
 
 		isResetting = false;
 		print("reset game"); 
-		Application.LoadLevel(Random.Range(0, Application.levelCount));
+		SceneManager.LoadScene(Random.Range(0, SceneManager.sceneCountInBuildSettings));
 	}
 }
