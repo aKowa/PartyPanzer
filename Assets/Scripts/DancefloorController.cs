@@ -25,7 +25,6 @@ public class DancefloorController : MonoBehaviour
 		offset += addOffset;
 		offset.x = offset.x % 1;
 		offset.y = offset.y % 1;
-		Debug.Log(offset);
 		rend.material.SetTextureOffset("_MainTex", offset);
 		StartCoroutine(Wait());
 	}

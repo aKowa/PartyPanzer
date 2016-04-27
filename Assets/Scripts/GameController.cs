@@ -8,10 +8,7 @@ public class GameController : MonoBehaviour {
 	public Buttons buttons;
 	public GameObject startScreen;
 	public GameObject winScreen;
-	public float timeToStartScreen = 2f;
-	public float timeToReset = 2f;
-	public Text resetTimer1;
-	public Text resetTimer2;
+	public float timeToReload = 2f;
 	private bool isResetting = false;
 
 	void Awake()
@@ -19,13 +16,11 @@ public class GameController : MonoBehaviour {
 		Screen.fullScreen = true;
 	}
 
-	void Start () 
+	void Start ()
 	{
-		DisplayStartScreen();
 		winScreen.SetActive(false);
+		DisplayStartScreen();
 		isResetting = false;
-		resetTimer1.gameObject.SetActive(false);
-		resetTimer2.gameObject.SetActive(false);
 	}
 
 	void Update()
@@ -42,7 +37,6 @@ public class GameController : MonoBehaviour {
 		{
 			if (isResetting)
 			{
-				StopAllCoroutines();
 				LoadRandomScene();
 			}
 			else if (Time.timeScale  < 1)
@@ -57,6 +51,12 @@ public class GameController : MonoBehaviour {
 		Time.timeScale = 1;
 		startScreen.SetActive(false);
 		winScreen.SetActive(false);
+	}
+
+	public void DisplayStartScreen()
+	{
+		Time.timeScale = 0;
+		startScreen.SetActive(true);
 	}
 
 	public void DisplayWinScreen (string looserTag)
@@ -76,41 +76,24 @@ public class GameController : MonoBehaviour {
 		StartCoroutine( ResetTime() );
 	}
 
-	public void DisplayStartScreen ()
-	{
-		Time.timeScale = 0;
-		startScreen.SetActive(true);
-	}
-
 	IEnumerator ResetTime()
 	{
 		isResetting = true;
 
-		for ( float i=timeToStartScreen; i >= 0; i -= 1/60f)
+		for (float i = 0; i < timeToReload; i += 1/60)
 		{
+			print(1/60);
+			print("resetting, i: " + i);
 			yield return null;
 		}
 
-		DisplayStartScreen();
-
-		//resetTimer1.gameObject.SetActive(true);
-		//resetTimer2.gameObject.SetActive(true);
-		//for ( float i=timeToReset; i >= 0; i -= 1/60f)
-		//{
-		//	string s = ((int)i).ToString();
-		//	resetTimer1.text = s;
-		//	resetTimer2.text = s;
-		//	yield return null;
-		//}
-		//resetTimer1.gameObject.SetActive(false);
-		//resetTimer2.gameObject.SetActive(false);
-
-		isResetting = false;
 		LoadRandomScene();
 	}
 
 	private void LoadRandomScene()
 	{
+		isResetting = false;
+		StopAllCoroutines();
 		Logger.consequitiveSessions++;
 		Logger.totalPlaytime += Time.time;
 		Logger.SetLog();
