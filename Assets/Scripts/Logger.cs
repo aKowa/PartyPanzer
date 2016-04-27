@@ -7,6 +7,8 @@ public class Logger : MonoBehaviour
 	public static int totalSessions = 0;
 	public static int consequitiveSessions = 0;
 	public static float totalPlaytime = 0;
+	public static string output;
+	public bool reset = false;
 
 	private static string s_totalSessions = "Total Sessions";
 	private static string s_consequitiveSessions = "Consequitive Sessions";
@@ -38,14 +40,31 @@ public class Logger : MonoBehaviour
 	public void OnApplicationQuit()
 	{
 		SetLog();
-		SetText();
+		//SetText();
 	}
 
 	private void SetText()
 	{
-		string output = s_totalSessions + ": " + totalSessions.ToString() + "   " +
+		output = s_totalSessions + ": " + totalSessions.ToString() + "   " +
 						s_consequitiveSessions + ": " + consequitiveSessions + "   " +
 						s_totalPlaytime + ":  " + totalPlaytime;
-		System.IO.File.WriteAllText(Application.persistentDataPath + "/PartyPanzerLog.txt", output);
+		System.IO.File.WriteAllText(Application.dataPath + "/PartyPanzerLog.txt", output);
+	}
+
+	private void ResetPlayerPrefs()
+	{
+		totalSessions = 0;
+		consequitiveSessions = 0;
+		totalPlaytime = 0;
+		SetLog();
+	}
+
+	public void Update()
+	{
+		if (reset)
+		{
+			reset = false;
+			ResetPlayerPrefs();
+		}
 	}
 }
