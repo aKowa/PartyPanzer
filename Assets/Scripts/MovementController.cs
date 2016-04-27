@@ -32,9 +32,7 @@ public class MovementController : MonoBehaviour
         if (Input.GetKey(left) && Input.GetKey(right))
         {
 			Vector3 targetPosition = transform.position + transform.up * moveSpeed * Time.deltaTime;
-			targetPosition.x = Mathf.Clamp(targetPosition.x, -6f, 6f);
-			targetPosition.y = Mathf.Clamp(targetPosition.y, -4.7f, 4.7f);
-			transform.position = targetPosition;
+			transform.position = targetPosition.ClampVector();
 			anim.SetBool("LeftTread", true);
 			anim.SetBool("RightTread", true);
 		}
