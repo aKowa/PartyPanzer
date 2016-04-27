@@ -14,11 +14,10 @@ public class LifeController : MonoBehaviour
 	public void UpdateLife()
 	{
 		--lifepoints;
-		print(this.transform.tag + " has " + lifepoints + " Life left");
-
+		//print(this.tag + " has " + lifepoints + " Life left");
 		if ( lifepoints <= 0 )
 		{
-			gc.DisplayWinScreen(this.transform.tag);
+			gc.DisplayWinScreen(this.tag);
 		}
 	}
 }

@@ -24,6 +24,7 @@ public class ShotController : MonoBehaviour {
 			{
 				StartCoroutine(StartExplosion());
 				lc.UpdateLife();
+				Player.ResetOtherPlayer(this.transform.parent.tag);
 			}
 		}
 	}
