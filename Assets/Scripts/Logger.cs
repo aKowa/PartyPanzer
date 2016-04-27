@@ -19,7 +19,6 @@ public class Logger : MonoBehaviour
 		GetLog();
 		totalSessions++;
 		SetLog();
-		SetText();
 	}
 
 	public static void SetLog()
@@ -40,15 +39,6 @@ public class Logger : MonoBehaviour
 	public void OnApplicationQuit()
 	{
 		SetLog();
-		//SetText();
-	}
-
-	private void SetText()
-	{
-		output = s_totalSessions + ": " + totalSessions.ToString() + "   " +
-						s_consequitiveSessions + ": " + consequitiveSessions + "   " +
-						s_totalPlaytime + ":  " + totalPlaytime;
-		System.IO.File.WriteAllText(Application.dataPath + "/PartyPanzerLog.txt", output);
 	}
 
 	private void ResetPlayerPrefs()
