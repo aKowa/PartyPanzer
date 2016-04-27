@@ -93,17 +93,17 @@ public class GameController : MonoBehaviour {
 
 		DisplayStartScreen();
 
-		resetTimer1.gameObject.SetActive(true);
-		resetTimer2.gameObject.SetActive(true);
-		for ( float i=timeToReset; i >= 0; i -= 1/60f)
-		{
-			string s = ((int)i).ToString();
-			resetTimer1.text = s;
-			resetTimer2.text = s;
-			yield return null;
-		}
-		resetTimer1.gameObject.SetActive(false);
-		resetTimer2.gameObject.SetActive(false);
+		//resetTimer1.gameObject.SetActive(true);
+		//resetTimer2.gameObject.SetActive(true);
+		//for ( float i=timeToReset; i >= 0; i -= 1/60f)
+		//{
+		//	string s = ((int)i).ToString();
+		//	resetTimer1.text = s;
+		//	resetTimer2.text = s;
+		//	yield return null;
+		//}
+		//resetTimer1.gameObject.SetActive(false);
+		//resetTimer2.gameObject.SetActive(false);
 
 		isResetting = false;
 		LoadRandomScene();
