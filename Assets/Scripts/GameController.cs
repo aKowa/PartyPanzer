@@ -43,8 +43,7 @@ public class GameController : MonoBehaviour {
 			if (isResetting)
 			{
 				StopAllCoroutines();
-				SceneManager.LoadScene(Random.Range(0, SceneManager.sceneCountInBuildSettings));
-//				Application.LoadLevel(Random.Range(0, Application.levelCount));
+				LoadRandomScene();
 			}
 			else if (Time.timeScale  < 1)
 			{
@@ -107,7 +106,14 @@ public class GameController : MonoBehaviour {
 		resetTimer2.gameObject.SetActive(false);
 
 		isResetting = false;
-		print("reset game"); 
+		LoadRandomScene();
+	}
+
+	private void LoadRandomScene()
+	{
+		Logger.consequitiveSessions++;
+		Logger.totalPlaytime += Time.time;
+		Logger.SetLog();
 		SceneManager.LoadScene(Random.Range(0, SceneManager.sceneCountInBuildSettings));
 	}
 }
