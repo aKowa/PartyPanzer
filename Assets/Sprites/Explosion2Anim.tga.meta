@@ -1,9 +1,25 @@
 fileFormatVersion: 2
 guid: 87dc4dbed2fd0f140abec0b59e6d4422
-timeCreated: 1461337255
+timeCreated: 1461423954
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Explosion2Anim_0
+    21300002: Explosion2Anim_1
+    21300004: Explosion2Anim_2
+    21300006: Explosion2Anim_3
+    21300008: Explosion2Anim_4
+    21300010: Explosion2Anim_5
+    21300012: Explosion2Anim_6
+    21300014: Explosion2Anim_7
+    21300016: Explosion2Anim_8
+    21300018: Explosion2Anim_9
+    21300020: Explosion2Anim_10
+    21300022: Explosion2Anim_11
+    21300024: Explosion2Anim_12
+    21300026: Explosion2Anim_13
+    21300028: Explosion2Anim_14
+    21300030: Explosion2Anim_15
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -38,7 +54,7 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -49,7 +65,388 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: Explosion2Anim_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21, y: 32}
+        - {x: -32, y: 19}
+        - {x: -32, y: -29}
+        - {x: -30, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
+    - name: Explosion2Anim_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 32}
+        - {x: -30, y: 25}
+        - {x: -32, y: 23}
+        - {x: -32, y: -20}
+        - {x: -18, y: -32}
+        - {x: 31, y: -32}
+        - {x: 32, y: -31}
+        - {x: 32, y: 32}
+    - name: Explosion2Anim_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 32}
+        - {x: -32, y: 19}
+        - {x: -32, y: -22}
+        - {x: -22, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
+    - name: Explosion2Anim_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24, y: 32}
+        - {x: -32, y: 24}
+        - {x: -32, y: -19}
+        - {x: -17, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 30}
+        - {x: 30, y: 32}
+    - name: Explosion2Anim_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 32}
+        - {x: -32, y: 26}
+        - {x: -32, y: -21}
+        - {x: -24, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
+      - - {x: 29, y: -21}
+        - {x: 28, y: -24}
+        - {x: 31, y: -28}
+        - {x: 32, y: -28}
+        - {x: 32, y: -22}
+        - {x: 31, y: -21}
+    - name: Explosion2Anim_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24, y: 32}
+        - {x: -32, y: 26}
+        - {x: -32, y: -29}
+        - {x: -24, y: -32}
+        - {x: 28, y: -32}
+        - {x: 32, y: -29}
+        - {x: 32, y: 32}
+      - - {x: 28, y: -32}
+        - {x: 28, y: -30}
+        - {x: 25, y: -29}
+        - {x: 23, y: -32}
+    - name: Explosion2Anim_6
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 23, y: -32}
+        - {x: 32, y: -26}
+        - {x: 32, y: 22}
+        - {x: 22, y: 32}
+        - {x: -24, y: 32}
+        - {x: -32, y: 26}
+        - {x: -32, y: -19}
+        - {x: -21, y: -32}
+        - {x: 14, y: -32}
+        - {x: 14, y: -31}
+        - {x: 13, y: -28}
+        - {x: 15, y: -32}
+      - - {x: 22, y: -30}
+        - {x: 23, y: -32}
+        - {x: 28, y: -32}
+        - {x: 28, y: -31}
+        - {x: 25, y: -28}
+        - {x: 24, y: -28}
+      - - {x: 29, y: 30}
+        - {x: 29, y: 32}
+        - {x: 24, y: 32}
+        - {x: 26, y: 29}
+    - name: Explosion2Anim_7
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21, y: 32}
+        - {x: -32, y: 23}
+        - {x: -32, y: -19}
+        - {x: -17, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
+    - name: Explosion2Anim_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23, y: 32}
+        - {x: -32, y: -7}
+        - {x: -32, y: -22}
+        - {x: -20, y: -32}
+        - {x: 30, y: -32}
+        - {x: 32, y: -26}
+        - {x: 32, y: 29}
+        - {x: 27, y: 32}
+    - name: Explosion2Anim_9
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 32}
+        - {x: -18, y: 30}
+        - {x: -19, y: 24}
+        - {x: -32, y: 8}
+        - {x: -32, y: -19}
+        - {x: -7, y: -32}
+        - {x: 7, y: -32}
+        - {x: 32, y: -16}
+        - {x: 32, y: 22}
+        - {x: 16, y: 32}
+      - - {x: 17, y: -32}
+        - {x: 17, y: -30}
+        - {x: 14, y: -29}
+        - {x: 12, y: -32}
+      - - {x: 14, y: 28}
+        - {x: 17, y: 29}
+        - {x: 17, y: 32}
+        - {x: 13, y: 32}
+        - {x: 12, y: 31}
+    - name: Explosion2Anim_10
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 29}
+        - {x: -26, y: 21}
+        - {x: -26, y: -32}
+        - {x: 29, y: -32}
+        - {x: 32, y: -30}
+        - {x: 32, y: 18}
+        - {x: 20, y: 29}
+      - - {x: -32, y: -9}
+        - {x: -32, y: -18}
+        - {x: -30, y: -18}
+        - {x: -26, y: -14}
+        - {x: -26, y: -13}
+        - {x: -30, y: -8}
+      - - {x: -32, y: 2}
+        - {x: -32, y: -4}
+        - {x: -30, y: -4}
+        - {x: -28, y: -2}
+        - {x: -28, y: 0}
+        - {x: -30, y: 2}
+      - - {x: -15, y: 32}
+        - {x: -16, y: 31}
+        - {x: -15, y: 28}
+        - {x: -13, y: 28}
+        - {x: -10, y: 31}
+        - {x: -10, y: 32}
+      - - {x: 2, y: 32}
+        - {x: 3, y: 29}
+        - {x: 8, y: 29}
+        - {x: 10, y: 31}
+        - {x: 10, y: 32}
+    - name: Explosion2Anim_11
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 32, y: -8}
+        - {x: 32, y: 24}
+        - {x: 20, y: 26}
+        - {x: -24, y: 26}
+        - {x: -28, y: 14}
+        - {x: -28, y: -20}
+        - {x: -18, y: -32}
+        - {x: -9, y: -32}
+        - {x: -9, y: -31}
+        - {x: -4, y: -32}
+        - {x: 19, y: -32}
+    - name: Explosion2Anim_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26, y: 26}
+        - {x: -26, y: -28}
+        - {x: -25, y: -32}
+        - {x: 26, y: -32}
+        - {x: 32, y: -15}
+        - {x: 32, y: 26}
+    - name: Explosion2Anim_13
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3, y: -26}
+        - {x: -7, y: -27}
+        - {x: -9, y: -31}
+        - {x: -9, y: -32}
+        - {x: 6, y: -32}
+        - {x: 6, y: -30}
+        - {x: 2, y: -26}
+      - - {x: 11, y: -26}
+        - {x: 8, y: -29}
+        - {x: 8, y: -32}
+        - {x: 18, y: -32}
+        - {x: 18, y: -27}
+        - {x: 16, y: -26}
+      - - {x: -19, y: 26}
+        - {x: -26, y: 22}
+        - {x: -26, y: -23}
+        - {x: -16, y: -26}
+        - {x: 14, y: -26}
+        - {x: 32, y: -22}
+        - {x: 32, y: 15}
+        - {x: 24, y: 26}
+    - name: Explosion2Anim_14
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4, y: -28}
+        - {x: -1, y: -30}
+        - {x: -1, y: -32}
+        - {x: 10, y: -32}
+        - {x: 9, y: -29}
+        - {x: 5, y: -28}
+      - - {x: 12, y: -32}
+        - {x: 16, y: -32}
+        - {x: 16, y: -29}
+        - {x: 13, y: -28}
+        - {x: 11, y: -30}
+      - - {x: 32, y: 19}
+        - {x: 10, y: 26}
+        - {x: 1, y: 26}
+        - {x: -2, y: 25}
+        - {x: -3, y: 26}
+        - {x: -19, y: 26}
+        - {x: -26, y: 23}
+        - {x: -26, y: -15}
+        - {x: -21, y: -26}
+        - {x: 8, y: -26}
+        - {x: 16, y: -22}
+        - {x: 18, y: -20}
+        - {x: 32, y: -14}
+    - name: Explosion2Anim_15
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 32, y: 19}
+        - {x: 26, y: 26}
+        - {x: -26, y: 26}
+        - {x: -26, y: -14}
+        - {x: -24, y: -20}
+        - {x: -6, y: -26}
+        - {x: 22, y: -26}
+        - {x: 32, y: -8}
     outline: []
   spritePackingTag: 
   userData: 
