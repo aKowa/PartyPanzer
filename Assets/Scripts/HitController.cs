@@ -8,6 +8,8 @@ public class HitController : MonoBehaviour {
 	public float penaltyTimeAdd = 0.5f;
 	public float penaltyAngle = 50f;
 	public float penaltyAngleAdd = 10f;
+	public float pushDistance = 1F;
+	public float pushTime = 1F;
 
 	private MovementController mc;
 	private bool canApply = true;
@@ -25,15 +27,17 @@ public class HitController : MonoBehaviour {
 	{
 		if ( other.tag == "Missile" && canApply ) 
 		{
-			StartCoroutine(OffsetTime());
+			StartCoroutine(Rotate());
+			StartCoroutine(Push(other.transform.up));
 			mc.moveSpeed *= penaltySpeed;
 			mc.rotateSpeed *= penaltySpeed;
 			penaltyAngle += penaltyAngleAdd;
 			penaltyTime += penaltyTimeAdd;
+
 		}
 	}
 
-	IEnumerator OffsetTime()
+	IEnumerator Rotate()
 	{
 		canApply = false;
 
@@ -57,5 +61,17 @@ public class HitController : MonoBehaviour {
 		mc.moveSpeed = initMoveSpeed;
 		mc.rotateSpeed = initRotateSpeed;
 		canApply = true;
+	}
+
+	IEnumerator Push(Vector3 direction)
+	{
+		Vector3 origin = this.transform.position;
+		Vector3 target = origin + direction * pushDistance;
+		for (float i=0; i < 1F; i += pushTime * Time.deltaTime)
+		{
+			Vector3 v = Vector3.Lerp(origin, target, i);
+			transform.position = v.ClampVector();
+			yield return null;
+		}
 	}
 }
