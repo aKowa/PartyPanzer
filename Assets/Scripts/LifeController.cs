@@ -5,7 +5,7 @@ public class LifeController : MonoBehaviour
 {
 	public GameController gc;
 	public int lifepoints = 1;
-
+	
 	public void Start()
 	{
 		lifepoints = this.transform.childCount;

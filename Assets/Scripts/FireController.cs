@@ -28,7 +28,7 @@ public class FireController : MonoBehaviour {
 
     void Update()
     {
-        if (Input.GetKeyDown(fire))
+        if (Input.GetKeyDown(fire) && Time.timeScale > 0)
         {
             if (canFire)
             {

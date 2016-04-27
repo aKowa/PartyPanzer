@@ -1,7 +1,7 @@
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2008
-
-Project("{17A07CC5-2FF3-0D73-5E05-BC41A91927F8}") = "PartyPanzer", "Assembly-CSharp.csproj", "{6F8CA9D3-AAFE-B611-1B2E-4D581D174EE5}"
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PartyPanzer.CSharp", "PartyPanzer.CSharp.csproj", "{5F04F7EB-CF76-3FCE-CB2D-2EEE76B292D9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,15 +9,12 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6F8CA9D3-AAFE-B611-1B2E-4D581D174EE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6F8CA9D3-AAFE-B611-1B2E-4D581D174EE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6F8CA9D3-AAFE-B611-1B2E-4D581D174EE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6F8CA9D3-AAFE-B611-1B2E-4D581D174EE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F04F7EB-CF76-3FCE-CB2D-2EEE76B292D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F04F7EB-CF76-3FCE-CB2D-2EEE76B292D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F04F7EB-CF76-3FCE-CB2D-2EEE76B292D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F04F7EB-CF76-3FCE-CB2D-2EEE76B292D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal
