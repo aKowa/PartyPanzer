@@ -8,7 +8,11 @@ public class GameController : MonoBehaviour {
 	public Buttons buttons;
 	public GameObject startScreen;
 	public GameObject winScreen;
-	public float timeToReload = 2f;
+	public float timeToDisplay = 1f;
+	public float timeToReset = 2f;
+	public GameObject splashScreen;
+	public ChangeImage imagePl1;
+	public ChangeImage imagePl2;
 	private bool isResetting = false;
 
 	void Awake()
@@ -25,15 +29,20 @@ public class GameController : MonoBehaviour {
 
 	void Update()
 	{
-		if ((
-			Input.GetKey(buttons.player1Fire) ||
-			Input.GetKey(buttons.player1Left) ||
-			Input.GetKey(buttons.player1Right)
-		) && (
-			Input.GetKey(buttons.player2Fire) ||
-			Input.GetKey(buttons.player2Left) ||
-			Input.GetKey(buttons.player2Right)
-		))
+		bool pl1Ready = Input.GetKey(buttons.player1Fire) || Input.GetKey(buttons.player1Left) || Input.GetKey(buttons.player1Right);
+		bool pl2Ready = Input.GetKey(buttons.player2Fire) ||Input.GetKey(buttons.player2Left) || Input.GetKey(buttons.player2Right);
+
+		if (pl1Ready)
+			imagePl1.SwitchToReady(true);
+		else
+			imagePl1.SwitchToReady(false);
+
+		if (pl2Ready)
+			imagePl2.SwitchToReady(true);
+		else
+			imagePl2.SwitchToReady(false);
+
+		if ( pl1Ready && pl2Ready)
 		{
 			if (isResetting)
 			{
@@ -49,6 +58,7 @@ public class GameController : MonoBehaviour {
 	void StartGame()
 	{
 		Time.timeScale = 1;
+		Destroy(this.splashScreen);
 		startScreen.SetActive(false);
 		winScreen.SetActive(false);
 	}
@@ -72,21 +82,27 @@ public class GameController : MonoBehaviour {
 		{
 			winScreen.transform.rotation = Quaternion.Euler( Vector3.forward * 180f);
 		}
-
-		StartCoroutine( ResetTime() );
+		StartCoroutine(TimerToDisplayStart());
 	}
 
-	IEnumerator ResetTime()
+	IEnumerator TimerToDisplayStart()
 	{
 		isResetting = true;
 
-		for (float i = 0; i < timeToReload; i += 1/60)
+		for (float i = 0; i < timeToReset; i += 1f / 60f)
 		{
-			print(1/60);
-			print("resetting, i: " + i);
 			yield return null;
 		}
+		DisplayStartScreen();
+		StartCoroutine(TimerToReset());
+	}
 
+	IEnumerator TimerToReset()
+	{
+		for (float i = 0; i < timeToReset; i += 1f / 60f)
+		{
+			yield return null;
+		}
 		LoadRandomScene();
 	}
 
