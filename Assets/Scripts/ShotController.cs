@@ -4,9 +4,9 @@ using System.Collections;
 public class ShotController : MonoBehaviour {
 
 	public float explosionScale = 2F;
+	public GameObject boom;
 
 	private LifeController lc;
-//	private bool isHit = false;
 	private Animator anim;
 
 	void Start()
@@ -31,10 +31,21 @@ public class ShotController : MonoBehaviour {
 
 	IEnumerator StartExplosion()
 	{
+		TriggerBoom();
 		anim.Play("Explosion2");
 		this.GetComponent<CircleCollider2D>().enabled = false;
 		this.transform.localScale = Vector3.one * explosionScale;
 		yield return new WaitForSeconds(1f);
 		Destroy(this.gameObject);
+	}
+
+	private void TriggerBoom()
+	{
+		GameObject clone = Instantiate(this.boom, this.transform.position, Quaternion.identity) as GameObject;
+
+		if (lc.tag == "Palyer2")
+		{
+			clone.transform.Rotate(Vector3.back, 180);
+		}
 	}
 }
