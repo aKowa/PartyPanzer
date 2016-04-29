@@ -15,7 +15,10 @@ public class DancefloorController : MonoBehaviour
 
 	IEnumerator Wait()
 	{
-		yield return new WaitForSeconds(timeTick);
+		for (float i = 0; i < timeTick; i += timeTick / 60)
+		{
+			yield return null;
+		}
 		SetOffset();
 	}
 
