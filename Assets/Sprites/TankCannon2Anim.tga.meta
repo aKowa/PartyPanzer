@@ -1,9 +1,25 @@
 fileFormatVersion: 2
 guid: 4eb356f029f90cd4089a8e46ffd3b6d8
-timeCreated: 1461777450
+timeCreated: 1461926505
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: TankCannon2Anim_0
+    21300002: TankCannon2Anim_1
+    21300004: TankCannon2Anim_2
+    21300006: TankCannon2Anim_3
+    21300008: TankCannon2Anim_4
+    21300010: TankCannon2Anim_5
+    21300012: TankCannon2Anim_6
+    21300014: TankCannon2Anim_7
+    21300016: TankCannon2Anim_8
+    21300018: TankCannon2Anim_9
+    21300020: TankCannon2Anim_10
+    21300022: TankCannon2Anim_11
+    21300024: TankCannon2Anim_12
+    21300026: TankCannon2Anim_13
+    21300028: TankCannon2Anim_14
+    21300030: TankCannon2Anim_15
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -38,7 +54,7 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -49,7 +65,292 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: TankCannon2Anim_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 64
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -27, y: 97}
+        - {x: -30, y: 94}
+        - {x: -30, y: 67}
+        - {x: -27, y: 64}
+        - {x: -16, y: -128}
+        - {x: 17, y: -128}
+        - {x: 30, y: 67}
+        - {x: 30, y: 94}
+        - {x: 27, y: 97}
+    - name: TankCannon2Anim_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 256
+        width: 64
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28, y: 97}
+        - {x: -30, y: 95}
+        - {x: -30, y: 68}
+        - {x: -27, y: 65}
+        - {x: -16, y: -128}
+        - {x: 17, y: -128}
+        - {x: 30, y: 67}
+        - {x: 30, y: 95}
+        - {x: 28, y: 97}
+    - name: TankCannon2Anim_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 64
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -30, y: 99}
+        - {x: -30, y: 25}
+        - {x: -19, y: -128}
+        - {x: 18, y: -128}
+        - {x: 30, y: 55}
+        - {x: 30, y: 99}
+    - name: TankCannon2Anim_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 256
+        width: 64
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -30, y: 101}
+        - {x: -30, y: -77}
+        - {x: -27, y: -128}
+        - {x: 17, y: -128}
+        - {x: 31, y: 26}
+        - {x: 31, y: 101}
+    - name: TankCannon2Anim_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 64
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 30, y: 104}
+        - {x: -30, y: 104}
+        - {x: -30, y: -99}
+        - {x: -28, y: -128}
+        - {x: 17, y: -128}
+        - {x: 31, y: 58}
+        - {x: 31, y: 100}
+    - name: TankCannon2Anim_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 256
+        width: 64
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -31, y: 106}
+        - {x: -31, y: -96}
+        - {x: -28, y: -128}
+        - {x: 17, y: -128}
+        - {x: 31, y: 56}
+        - {x: 31, y: 106}
+    - name: TankCannon2Anim_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 256
+        width: 64
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 30, y: 107}
+        - {x: -31, y: 107}
+        - {x: -31, y: -78}
+        - {x: -27, y: -128}
+        - {x: 17, y: -128}
+        - {x: 31, y: 75}
+        - {x: 31, y: 106}
+    - name: TankCannon2Anim_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 256
+        width: 64
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -31, y: 108}
+        - {x: -31, y: -98}
+        - {x: -28, y: -128}
+        - {x: 17, y: -128}
+        - {x: 31, y: 70}
+        - {x: 31, y: 108}
+    - name: TankCannon2Anim_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25, y: 107}
+        - {x: -31, y: 105}
+        - {x: -31, y: 75}
+        - {x: -28, y: 72}
+        - {x: -17, y: -128}
+        - {x: 17, y: -128}
+        - {x: 31, y: 38}
+        - {x: 31, y: 107}
+    - name: TankCannon2Anim_9
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -30, y: 103}
+        - {x: -30, y: -86}
+        - {x: -28, y: -128}
+        - {x: 18, y: -128}
+        - {x: 31, y: 45}
+        - {x: 31, y: 103}
+    - name: TankCannon2Anim_10
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28, y: 99}
+        - {x: -30, y: 97}
+        - {x: -30, y: 68}
+        - {x: -20, y: -128}
+        - {x: 18, y: -128}
+        - {x: 30, y: 68}
+        - {x: 30, y: 99}
+    - name: TankCannon2Anim_11
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 30, y: 95}
+        - {x: -30, y: 95}
+        - {x: -30, y: -106}
+        - {x: -29, y: -128}
+        - {x: 17, y: -128}
+        - {x: 30, y: 28}
+    - name: TankCannon2Anim_12
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29, y: 93}
+        - {x: -29, y: -84}
+        - {x: -27, y: -128}
+        - {x: 17, y: -128}
+        - {x: 30, y: 41}
+        - {x: 30, y: 93}
+    - name: TankCannon2Anim_13
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29, y: 92}
+        - {x: -29, y: -111}
+        - {x: -28, y: -128}
+        - {x: 18, y: -128}
+        - {x: 30, y: 33}
+        - {x: 30, y: 92}
+    - name: TankCannon2Anim_14
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 29, y: 93}
+        - {x: -29, y: 93}
+        - {x: -29, y: -82}
+        - {x: -26, y: -128}
+        - {x: 17, y: -128}
+        - {x: 30, y: 63}
+        - {x: 30, y: 92}
+    - name: TankCannon2Anim_15
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28, y: 96}
+        - {x: -30, y: 94}
+        - {x: -30, y: 33}
+        - {x: -16, y: -128}
+        - {x: 17, y: -128}
+        - {x: 30, y: 44}
+        - {x: 30, y: 96}
     outline: []
   spritePackingTag: 
   userData: 
