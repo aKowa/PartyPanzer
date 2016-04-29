@@ -1,9 +1,25 @@
 fileFormatVersion: 2
 guid: 6a5d927d841a8ea4db4489041dca6410
-timeCreated: 1461777452
+timeCreated: 1461927965
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: TankBody2Anim_0
+    21300002: TankBody2Anim_1
+    21300004: TankBody2Anim_2
+    21300006: TankBody2Anim_3
+    21300008: TankBody2Anim_4
+    21300010: TankBody2Anim_5
+    21300012: TankBody2Anim_6
+    21300014: TankBody2Anim_7
+    21300016: TankBody2Anim_8
+    21300018: TankBody2Anim_9
+    21300020: TankBody2Anim_10
+    21300022: TankBody2Anim_11
+    21300024: TankBody2Anim_12
+    21300026: TankBody2Anim_13
+    21300028: TankBody2Anim_14
+    21300030: TankBody2Anim_15
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -38,7 +54,7 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -49,7 +65,378 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: TankBody2Anim_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4, y: -124}
+        - {x: 7, y: -124}
+        - {x: 8, y: -123}
+        - {x: 110, y: -123}
+        - {x: 112, y: -121}
+        - {x: 112, y: 121}
+        - {x: 110, y: 123}
+        - {x: 57, y: 124}
+        - {x: 25, y: 128}
+        - {x: -15, y: 128}
+        - {x: -19, y: 124}
+        - {x: -41, y: 124}
+        - {x: -42, y: 123}
+        - {x: -93, y: 124}
+        - {x: -110, y: 123}
+        - {x: -112, y: 121}
+        - {x: -112, y: -121}
+        - {x: -110, y: -123}
+        - {x: -82, y: -124}
+        - {x: -81, y: -124}
+        - {x: -80, y: -123}
+        - {x: -37, y: -124}
+        - {x: -5, y: -123}
+    - name: TankBody2Anim_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 20, y: 124}
+        - {x: 20, y: 128}
+        - {x: -14, y: 128}
+        - {x: -14, y: 124}
+        - {x: -110, y: 124}
+        - {x: -112, y: 122}
+        - {x: -112, y: -122}
+        - {x: -110, y: -124}
+        - {x: 110, y: -124}
+        - {x: 112, y: -122}
+        - {x: 112, y: 122}
+        - {x: 110, y: 124}
+    - name: TankBody2Anim_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 113, y: -123}
+        - {x: 113, y: 122}
+        - {x: 112, y: 124}
+        - {x: 108, y: 125}
+        - {x: 55, y: 125}
+        - {x: 27, y: 128}
+        - {x: -15, y: 128}
+        - {x: -18, y: 126}
+        - {x: -32, y: 126}
+        - {x: -64, y: 125}
+        - {x: -110, y: 125}
+        - {x: -113, y: 122}
+        - {x: -113, y: -122}
+        - {x: -111, y: -125}
+        - {x: 108, y: -125}
+    - name: TankBody2Anim_3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 111, y: 126}
+        - {x: 20, y: 126}
+        - {x: 20, y: 128}
+        - {x: -14, y: 128}
+        - {x: -14, y: 126}
+        - {x: -109, y: 126}
+        - {x: -114, y: 124}
+        - {x: -114, y: -123}
+        - {x: -111, y: -126}
+        - {x: 111, y: -126}
+        - {x: 114, y: -123}
+        - {x: 114, y: 123}
+    - name: TankBody2Anim_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 20, y: 127}
+        - {x: 20, y: 128}
+        - {x: -14, y: 128}
+        - {x: -15, y: 127}
+        - {x: -112, y: 127}
+        - {x: -115, y: 124}
+        - {x: -115, y: -124}
+        - {x: -112, y: -127}
+        - {x: 112, y: -127}
+        - {x: 115, y: -124}
+        - {x: 115, y: 124}
+        - {x: 112, y: 127}
+    - name: TankBody2Anim_5
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -113, y: 128}
+        - {x: -116, y: 125}
+        - {x: -116, y: -125}
+        - {x: -113, y: -128}
+        - {x: 113, y: -128}
+        - {x: 116, y: -125}
+        - {x: 116, y: 125}
+        - {x: 113, y: 128}
+    - name: TankBody2Anim_6
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 115, y: -128}
+        - {x: 116, y: -126}
+        - {x: 116, y: 128}
+        - {x: -115, y: 128}
+        - {x: -116, y: 126}
+        - {x: -116, y: -126}
+        - {x: -115, y: -128}
+    - name: TankBody2Anim_7
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 117, y: 125}
+        - {x: 115, y: 128}
+        - {x: -117, y: 128}
+        - {x: -117, y: -125}
+        - {x: -115, y: -128}
+        - {x: 117, y: -128}
+    - name: TankBody2Anim_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -114, y: 128}
+        - {x: -116, y: 126}
+        - {x: -116, y: -126}
+        - {x: -114, y: -128}
+        - {x: 114, y: -128}
+        - {x: 116, y: -126}
+        - {x: 116, y: 126}
+        - {x: 114, y: 128}
+    - name: TankBody2Anim_9
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 20, y: 127}
+        - {x: 20, y: 128}
+        - {x: -14, y: 128}
+        - {x: -15, y: 127}
+        - {x: -112, y: 127}
+        - {x: -115, y: 124}
+        - {x: -115, y: -124}
+        - {x: -112, y: -127}
+        - {x: 112, y: -127}
+        - {x: 115, y: -124}
+        - {x: 115, y: 124}
+        - {x: 112, y: 127}
+    - name: TankBody2Anim_10
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 114, y: 124}
+        - {x: 111, y: 125}
+        - {x: 37, y: 128}
+        - {x: -14, y: 128}
+        - {x: -14, y: 125}
+        - {x: -111, y: 125}
+        - {x: -113, y: 123}
+        - {x: -114, y: 116}
+        - {x: -114, y: -124}
+        - {x: -111, y: -125}
+        - {x: 111, y: -125}
+        - {x: 113, y: -123}
+        - {x: 114, y: -108}
+    - name: TankBody2Anim_11
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 20, y: 123}
+        - {x: 20, y: 128}
+        - {x: -14, y: 128}
+        - {x: -14, y: 123}
+        - {x: -110, y: 123}
+        - {x: -112, y: 121}
+        - {x: -112, y: -121}
+        - {x: -110, y: -123}
+        - {x: 110, y: -123}
+        - {x: 112, y: -121}
+        - {x: 112, y: 121}
+        - {x: 110, y: 123}
+    - name: TankBody2Anim_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 20, y: 121}
+        - {x: 20, y: 128}
+        - {x: -14, y: 128}
+        - {x: -14, y: 121}
+        - {x: -109, y: 121}
+        - {x: -111, y: 119}
+        - {x: -111, y: -119}
+        - {x: -109, y: -121}
+        - {x: 109, y: -121}
+        - {x: 111, y: -119}
+        - {x: 111, y: 119}
+        - {x: 109, y: 121}
+    - name: TankBody2Anim_13
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 20, y: 121}
+        - {x: 20, y: 128}
+        - {x: -14, y: 128}
+        - {x: -14, y: 121}
+        - {x: -108, y: 121}
+        - {x: -110, y: 119}
+        - {x: -110, y: -119}
+        - {x: -108, y: -121}
+        - {x: 108, y: -121}
+        - {x: 110, y: -119}
+        - {x: 110, y: 119}
+        - {x: 108, y: 121}
+    - name: TankBody2Anim_14
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 34, y: -122}
+        - {x: 82, y: -122}
+        - {x: 109, y: -121}
+        - {x: 111, y: -119}
+        - {x: 111, y: 119}
+        - {x: 109, y: 121}
+        - {x: 80, y: 123}
+        - {x: 49, y: 123}
+        - {x: 23, y: 128}
+        - {x: -14, y: 128}
+        - {x: -14, y: 121}
+        - {x: -109, y: 121}
+        - {x: -111, y: 119}
+        - {x: -111, y: -119}
+        - {x: -110, y: -121}
+        - {x: -107, y: -122}
+        - {x: -24, y: -122}
+        - {x: -23, y: -121}
+        - {x: 34, y: -121}
+    - name: TankBody2Anim_15
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 20, y: 123}
+        - {x: 20, y: 128}
+        - {x: -14, y: 128}
+        - {x: -14, y: 123}
+        - {x: -109, y: 123}
+        - {x: -112, y: 120}
+        - {x: -112, y: -120}
+        - {x: -109, y: -123}
+        - {x: 109, y: -123}
+        - {x: 112, y: -120}
+        - {x: 112, y: 120}
+        - {x: 109, y: 123}
     outline: []
   spritePackingTag: 
   userData: 
