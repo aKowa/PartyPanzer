@@ -4,7 +4,7 @@ using System.Collections;
 public class MovementController : MonoBehaviour
 {
     public KeyCode left = KeyCode.A;
-    public KeyCode right = KeyCode.D;
+    public KeyCode[] right = new  KeyCode[2] { KeyCode.Hash, KeyCode.Slash };
     public float moveSpeed = 1F;
     public float rotateSpeed = 60F;
     private Transform leftRotator;
@@ -29,10 +29,10 @@ public class MovementController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(left) && Input.GetKey(right))
+        if (Input.GetKey(left) && Utility.GetKeyPress(right) )
         {
 			Vector3 targetPosition = transform.position + transform.up * moveSpeed * Time.deltaTime;
-			transform.position = targetPosition.ClampVector();
+			transform.position = targetPosition.ClampToBorder();
 			anim.SetBool("LeftTread", true);
 			anim.SetBool("RightTread", true);
 		}
@@ -52,7 +52,7 @@ public class MovementController : MonoBehaviour
 			anim.SetBool("LeftTread", false);
 		}
 
-        else if (Input.GetKey(right))
+        else if (Utility.GetKeyPress(right))
         {
 			transform.Rotate(Vector3.back, -1 * rotateSpeed * Time.deltaTime);
 			anim.SetBool("RightTread", true);

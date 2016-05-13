@@ -9,6 +9,6 @@ public class Buttons
 	public KeyCode player1Fire = KeyCode.W;
 
 	public KeyCode player2Left = KeyCode.LeftArrow;
-	public KeyCode player2Right = KeyCode.RightArrow;
+	public KeyCode[] player2Right = new KeyCode[] {KeyCode.Hash, KeyCode.Slash};
 	public KeyCode player2Fire = KeyCode.UpArrow;
 }

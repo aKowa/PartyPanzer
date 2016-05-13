@@ -15,6 +15,11 @@ public class ShotController : MonoBehaviour {
 		anim = this.GetComponent<Animator>();
 	}
 
+	void Update()
+	{
+		this.transform.position = this.transform.position.ClampToBorder();
+	}
+
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.tag == "Missile")

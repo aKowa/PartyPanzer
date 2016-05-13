@@ -30,7 +30,7 @@ public class GameController : MonoBehaviour {
 	void Update()
 	{
 		bool pl1Ready = Input.GetKey(buttons.player1Fire) || Input.GetKey(buttons.player1Left) || Input.GetKey(buttons.player1Right);
-		bool pl2Ready = Input.GetKey(buttons.player2Fire) ||Input.GetKey(buttons.player2Left) || Input.GetKey(buttons.player2Right);
+		bool pl2Ready = Input.GetKey(buttons.player2Fire) ||Input.GetKey(buttons.player2Left) || Utility.GetKeyPress(buttons.player2Right);
 
 		if (pl1Ready)
 			imagePl1.SwitchToReady(true);

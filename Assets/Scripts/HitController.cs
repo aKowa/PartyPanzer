@@ -70,7 +70,7 @@ public class HitController : MonoBehaviour {
 		for (float i=0; i < 1F; i += pushTime * Time.deltaTime)
 		{
 			Vector3 v = Vector3.Lerp(origin, target, i);
-			transform.position = v.ClampVector();
+			transform.position = v.ClampToBorder();
 			yield return null;
 		}
 	}
