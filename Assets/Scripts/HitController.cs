@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HitController : MonoBehaviour {
-
+public class HitController : MonoBehaviour
+{
 	public float penaltySpeed = 0.5F;
 	public float penaltyTime = 1F;
 	public float penaltyTimeAdd = 0.5f;
@@ -18,27 +18,27 @@ public class HitController : MonoBehaviour {
 
 	private void Awake ()
 	{
-		_movementController = this.GetComponent<MovementController>();
+		_movementController = this.GetComponent<MovementController> ();
 		initMoveSpeed = _movementController.moveSpeed;
 		initRotateSpeed = _movementController.rotateSpeed;
 	}
 
-	private void OnTriggerEnter2D( Collider2D other )
+	private void OnTriggerEnter2D ( Collider2D other )
 	{
 		if (other.tag != "Missile" || !canApply) return;
-		StartCoroutine(Rotate());
-		StartCoroutine(Push(other.transform.up));
+		StartCoroutine ( Rotate () );
+		StartCoroutine ( Push ( other.transform.up ) );
 		_movementController.moveSpeed *= penaltySpeed;
 		_movementController.rotateSpeed *= penaltySpeed;
 		penaltyAngle += penaltyAngleAdd;
 		penaltyTime += penaltyTimeAdd;
 	}
 
-	private IEnumerator Rotate()
+	private IEnumerator Rotate ()
 	{
 		canApply = false;
 
-		var rotateDirection = Random.Range(-1, 1);
+		var rotateDirection = Random.Range ( -1, 1 );
 
 		if (rotateDirection == 0)
 		{
@@ -46,12 +46,12 @@ public class HitController : MonoBehaviour {
 		}
 
 		var initRotation = transform.rotation.eulerAngles;
-		var targetRotationZ = Vector3.forward * (initRotation.z + (float)rotateDirection * Random.Range(penaltyAngle - 5f, penaltyAngle + 5f));
+		var targetRotationZ = Vector3.forward * (initRotation.z + (float)rotateDirection * Random.Range ( penaltyAngle - 5f, penaltyAngle + 5f ));
 
 		for (float i = 0; i < 1; i += penaltyTime * Time.deltaTime)
 		{
-			var targetRotation = Vector3.Lerp(initRotation, targetRotationZ,i);
-			transform.rotation = Quaternion.Euler(targetRotation);
+			var targetRotation = Vector3.Lerp ( initRotation, targetRotationZ, i );
+			transform.rotation = Quaternion.Euler ( targetRotation );
 			yield return null;
 		}
 
@@ -60,15 +60,25 @@ public class HitController : MonoBehaviour {
 		canApply = true;
 	}
 
-	private IEnumerator Push(Vector3 direction)
+	private IEnumerator Push ( Vector3 direction )
 	{
 		var origin = this.transform.position;
 		var target = origin + direction * pushDistance;
-		for (float i=0; i < 1F; i += pushTime * Time.deltaTime)
+		for (float i = 0; i < 1F; i += pushTime * Time.deltaTime)
 		{
-			var v = Vector3.Lerp(origin, target, i);
-			transform.position = v.ClampToBorder();
+			var v = Vector3.Lerp ( origin, target, i );
+			transform.position = v.ClampToBorder ();
 			yield return null;
+		}
+	}
+
+	public void OnCollisionEnter2D ( Collision2D collision )
+	{
+		if (collision.transform.tag == "Obstacle")
+		{
+			Debug.Log("Hit Wall");
+			StopAllCoroutines ();
+			canApply = true;
 		}
 	}
 }

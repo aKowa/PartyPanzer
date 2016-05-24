@@ -3,15 +3,13 @@ using System.Collections;
 
 public class MovementController : MonoBehaviour
 {
-    public KeyCode left = KeyCode.A;
-    public KeyCode[] right = new  KeyCode[2] { KeyCode.Hash, KeyCode.Slash };
     public float moveSpeed = 1F;
     public float rotateSpeed = 60F;
     private Transform leftRotator;
     private Transform rightRotator;
 	private Animator anim;
 
-    void Awake()
+	private void Awake()
     {
 		leftRotator = transform.FindChild("left_tread");
 		rightRotator = transform.FindChild("right_tread");
@@ -27,11 +25,26 @@ public class MovementController : MonoBehaviour
 		}
     }
 
-    void Update()
-    {
-        if (Input.GetKey(left) && Utility.GetKeyPress(right) )
+	private void Update()
+	{
+		var left = false;
+		var right = false;
+
+		switch (this.tag)
+		{
+			case "Player1":
+				left = InputController.Player1Left;
+				right = InputController.Player1Right;
+				break;
+			case "Player2":
+				left = InputController.Player2Left;
+				right = InputController.Player2Right;
+				break;
+		}
+
+        if (left && right )
         {
-			Vector3 targetPosition = transform.position + transform.up * moveSpeed * Time.deltaTime;
+			var targetPosition = transform.position + transform.up * moveSpeed * Time.deltaTime;
 			transform.position = targetPosition.ClampToBorder();
 			anim.SetBool("LeftTread", true);
 			anim.SetBool("RightTread", true);
@@ -42,7 +55,7 @@ public class MovementController : MonoBehaviour
 			anim.SetBool("RightTread", false);
 		}
 
-        else if (Input.GetKey(left))
+        else if (left)
         {
 			transform.Rotate(Vector3.back, rotateSpeed * Time.deltaTime);
 			anim.SetBool("LeftTread", true);
@@ -52,7 +65,7 @@ public class MovementController : MonoBehaviour
 			anim.SetBool("LeftTread", false);
 		}
 
-        else if (Utility.GetKeyPress(right))
+        else if (right)
         {
 			transform.Rotate(Vector3.back, -1 * rotateSpeed * Time.deltaTime);
 			anim.SetBool("RightTread", true);

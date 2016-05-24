@@ -3,32 +3,58 @@
 public class InputController : MonoBehaviour
 {
 	public Buttons Buttons;
-	public static bool Player1Left = false;
-	public static bool Player1Right = false;
-	public static bool Player1Fire = false;
-	public static bool Player2Left = false;
-	public static bool Player2Right = false;
-	public static bool Player2Fire = false;
+	private static Buttons _buttons;
 
-	public void Update ()
+	public void Awake ()
 	{
-		Player1Left = SetButton( Buttons.Player1Left );
-		Player1Right = SetButton ( Buttons.Player1Right );
-		Player1Fire = SetButton ( Buttons.Player1Fire );
-
-		Player2Left = SetButton ( Buttons.Player2Left );
-		Player2Right = SetButton ( Buttons.Player2Right );
-		Player2Fire = SetButton ( Buttons.Player2Fire );
-		Debug.Log(Player1Left);
+		_buttons = Buttons;
 	}
 
-	private bool SetButton(KeyCode[] keyCodes)
+	public static bool Player1Left
 	{
-		foreach (var c in keyCodes)
+		get
 		{
-			if (Input.GetKey(c))
-				return true;
+			return Utility.GetKeyPress ( _buttons.Player1Left );
 		}
-		return false;
+	}
+
+	public static bool Player1Right
+	{
+		get
+		{
+			return Utility.GetKeyPress ( _buttons.Player1Right );
+		}
+	}
+
+	public static bool Player1Fire
+	{
+		get
+		{
+			return Utility.GetKeyPress ( _buttons.Player1Fire );
+		}
+	}
+
+	public static bool Player2Left
+	{
+		get
+		{
+			return Utility.GetKeyPress ( _buttons.Player2Left );
+		}
+	}
+
+	public static bool Player2Right
+	{
+		get
+		{
+			return Utility.GetKeyPress ( _buttons.Player2Right );
+		}
+	}
+
+	public static bool Player2Fire
+	{
+		get
+		{
+			return Utility.GetKeyPress ( _buttons.Player2Fire );
+		}
 	}
 }
