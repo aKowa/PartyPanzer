@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Level04_AltShotPos.unity
+- path: Assets/Scenes/Level00.unity
   isLoaded: 1
   isActive: 1
