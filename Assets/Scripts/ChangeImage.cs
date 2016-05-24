@@ -9,7 +9,7 @@ public class ChangeImage : MonoBehaviour {
 	private Image image;
 	private Sprite initSprite;
 
-	void Start()
+	private void Start()
 	{
 		this.image = this.GetComponentInChildren<Image>();
 		this.initSprite = this.image.sprite;
@@ -17,13 +17,6 @@ public class ChangeImage : MonoBehaviour {
 
 	public void SwitchToReady(bool ready)
 	{
-		if (ready)
-		{
-			image.sprite = readySprite;
-		}
-		else
-		{
-			image.sprite = initSprite;
-		}
+		image.sprite = ready ? readySprite : initSprite;
 	}
 }

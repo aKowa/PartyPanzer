@@ -9,32 +9,28 @@ public class ShotController : MonoBehaviour {
 	private LifeController lc;
 	private Animator anim;
 
-	void Start()
+ 	private void Start()
 	{
 		lc = this.transform.parent.GetComponent<LifeController>();
 		anim = this.GetComponent<Animator>();
 	}
 
-	void Update()
+	private void Update()
 	{
 		this.transform.position = this.transform.position.ClampToBorder();
 	}
 
-	void OnTriggerEnter2D(Collider2D other)
+	private void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.tag == "Missile")
-		{
-			MissileController mc = other.GetComponent<MissileController>();
-			if (mc.playerTag != this.transform.parent.tag)
-			{
-				StartCoroutine(StartExplosion());
-				lc.UpdateLife();
-				Player.ResetOtherPlayer(this.transform.parent.tag);
-			}
-		}
+		if (other.tag != "Missile") return;
+		var mc = other.GetComponent<MissileController>();
+		if (mc.playerTag == this.transform.parent.tag) return;
+		StartCoroutine(StartExplosion());
+		lc.UpdateLife();
+		Player.ResetOtherPlayer(this.transform.parent.tag);
 	}
 
-	IEnumerator StartExplosion()
+	private IEnumerator StartExplosion()
 	{
 		TriggerBoom();
 		anim.Play("Explosion2");
@@ -46,11 +42,9 @@ public class ShotController : MonoBehaviour {
 
 	private void TriggerBoom()
 	{
-		GameObject clone = Instantiate(this.boom, this.transform.position, Quaternion.identity) as GameObject;
+		var clone = Instantiate(this.boom, this.transform.position, Quaternion.identity) as GameObject;
 
-		if (lc.tag == "Palyer2")
-		{
-			clone.transform.Rotate(Vector3.back, 180);
-		}
+		if (lc.tag != "Palyer2") return;
+		if (clone != null) clone.transform.Rotate(Vector3.back, 180);
 	}
 }

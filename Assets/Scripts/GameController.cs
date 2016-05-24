@@ -1,11 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class GameController : MonoBehaviour {
-
-	public Buttons buttons;
+public class GameController : MonoBehaviour
+{ 	
 	public GameObject startScreen;
 	public GameObject winScreen;
 	public float timeToDisplay = 1f;
@@ -15,32 +13,20 @@ public class GameController : MonoBehaviour {
 	public ChangeImage imagePl2;
 	private bool isResetting = false;
 
-	void Awake()
-	{
-		//Screen.fullScreen = true;
-	}
-
-	void Start ()
+	private void Start ()
 	{
 		winScreen.SetActive(false);
 		DisplayStartScreen();
 		isResetting = false;
 	}
 
-	void Update()
+	private void Update()
 	{
-		bool pl1Ready = Input.GetKey(buttons.player1Fire) || Input.GetKey(buttons.player1Left) || Input.GetKey(buttons.player1Right);
-		bool pl2Ready = Input.GetKey(buttons.player2Fire) ||Input.GetKey(buttons.player2Left) || Utility.GetKeyPress(buttons.player2Right);
+		var pl1Ready = InputController.Player1Left || InputController.Player1Right || InputController.Player1Fire;
+		var pl2Ready = InputController.Player2Left || InputController.Player2Right || InputController.Player2Fire;
 
-		if (pl1Ready)
-			imagePl1.SwitchToReady(true);
-		else
-			imagePl1.SwitchToReady(false);
-
-		if (pl2Ready)
-			imagePl2.SwitchToReady(true);
-		else
-			imagePl2.SwitchToReady(false);
+		imagePl1.SwitchToReady(pl1Ready);
+		imagePl2.SwitchToReady(pl2Ready);
 
 		if ( pl1Ready && pl2Ready)
 		{
@@ -55,7 +41,7 @@ public class GameController : MonoBehaviour {
 		}
 	}
 
-	void StartGame()
+	private void StartGame()
 	{
 		Time.timeScale = 1;
 		Destroy(this.splashScreen);
@@ -85,7 +71,7 @@ public class GameController : MonoBehaviour {
 		StartCoroutine(TimerToDisplayStart());
 	}
 
-	IEnumerator TimerToDisplayStart()
+	private IEnumerator TimerToDisplayStart()
 	{
 		isResetting = true;
 
@@ -97,7 +83,7 @@ public class GameController : MonoBehaviour {
 		StartCoroutine(TimerToReset());
 	}
 
-	IEnumerator TimerToReset()
+	private IEnumerator TimerToReset()
 	{
 		for (float i = 0; i < timeToReset; i += 1f / 60f)
 		{

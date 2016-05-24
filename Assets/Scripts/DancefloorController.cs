@@ -6,14 +6,14 @@ public class DancefloorController : MonoBehaviour
 	public float timeTick = 1;
 	public Vector2 addOffset = new Vector2(0.5f, 0.25f);
 	private MeshRenderer rend;
-	
-	void Start()
+
+	private void Start()
 	{
 		this.rend = GetComponent<MeshRenderer>();
 		StartCoroutine(Wait());
 	}
 
-	IEnumerator Wait()
+	private IEnumerator Wait()
 	{
 		for (float i = 0; i < timeTick; i += timeTick / 60)
 		{
@@ -24,7 +24,7 @@ public class DancefloorController : MonoBehaviour
 
 	private void SetOffset()
 	{
-		Vector2 offset = rend.material.GetTextureOffset("_MainTex");
+		var offset = rend.material.GetTextureOffset("_MainTex");
 		offset += addOffset;
 		offset.x = offset.x % 1;
 		offset.y = offset.y % 1;

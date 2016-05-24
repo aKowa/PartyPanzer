@@ -11,65 +11,62 @@ public class HitController : MonoBehaviour {
 	public float pushDistance = 1F;
 	public float pushTime = 1F;
 
-	private MovementController mc;
+	private MovementController _movementController;
 	private bool canApply = true;
 	private float initMoveSpeed;
 	private float initRotateSpeed;
 
-	void Awake ()
+	private void Awake ()
 	{
-		mc = this.GetComponent<MovementController>();
-		initMoveSpeed = mc.moveSpeed;
-		initRotateSpeed = mc.rotateSpeed;
+		_movementController = this.GetComponent<MovementController>();
+		initMoveSpeed = _movementController.moveSpeed;
+		initRotateSpeed = _movementController.rotateSpeed;
 	}
 
-	void OnTriggerEnter2D( Collider2D other )
+	private void OnTriggerEnter2D( Collider2D other )
 	{
-		if ( other.tag == "Missile" && canApply ) 
-		{
-			StartCoroutine(Rotate());
-			StartCoroutine(Push(other.transform.up));
-			mc.moveSpeed *= penaltySpeed;
-			mc.rotateSpeed *= penaltySpeed;
-			penaltyAngle += penaltyAngleAdd;
-			penaltyTime += penaltyTimeAdd;
-
-		}
+		if (other.tag != "Missile" || !canApply) return;
+		StartCoroutine(Rotate());
+		StartCoroutine(Push(other.transform.up));
+		_movementController.moveSpeed *= penaltySpeed;
+		_movementController.rotateSpeed *= penaltySpeed;
+		penaltyAngle += penaltyAngleAdd;
+		penaltyTime += penaltyTimeAdd;
 	}
 
-	IEnumerator Rotate()
+	private IEnumerator Rotate()
 	{
 		canApply = false;
 
-		int rotateDirection = Random.Range(-1, 1);
+		var rotateDirection = Random.Range(-1, 1);
 
 		if (rotateDirection == 0)
 		{
 			rotateDirection = 1;
 		}
 
-		Vector3 initRotation = transform.rotation.eulerAngles;
-		Vector3 targetRotationZ = Vector3.forward * (initRotation.z + (float)rotateDirection * Random.Range(penaltyAngle - 5f, penaltyAngle + 5f));
+		var initRotation = transform.rotation.eulerAngles;
+		var targetRotationZ = Vector3.forward * (initRotation.z + (float)rotateDirection * Random.Range(penaltyAngle - 5f, penaltyAngle + 5f));
 
 		for (float i = 0; i < 1; i += penaltyTime * Time.deltaTime)
 		{
-			Vector3 targetRotation = Vector3.Lerp(initRotation, targetRotationZ,i);
+			var targetRotation = Vector3.Lerp(initRotation, targetRotationZ,i);
 			transform.rotation = Quaternion.Euler(targetRotation);
 			yield return null;
 		}
 
-		mc.moveSpeed = initMoveSpeed;
-		mc.rotateSpeed = initRotateSpeed;
+		_movementController.moveSpeed = initMoveSpeed;
+		_movementController.rotateSpeed = initRotateSpeed;
 		canApply = true;
 	}
 
-	IEnumerator Push(Vector3 direction)
+	private IEnumerator Push(Vector3 direction)
 	{
-		Vector3 origin = this.transform.position;
-		Vector3 target = origin + direction * pushDistance;
+		var origin = this.transform.position;
+		var target = origin + direction * pushDistance;
 		for (float i=0; i < 1F; i += pushTime * Time.deltaTime)
 		{
-			Vector3 v = Vector3.Lerp(origin, target, i);
+			var v = Vector3.Lerp(origin, target, i);
 			transform.position = v.ClampToBorder();
 			yield return null;
 		}

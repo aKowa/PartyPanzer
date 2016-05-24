@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 	[HideInInspector]
 	public Quaternion initRotation;
 
-	void Start ()
+	private void Start ()
 	{
 		initPosition = this.transform.position;
 		initRotation = this.transform.rotation;

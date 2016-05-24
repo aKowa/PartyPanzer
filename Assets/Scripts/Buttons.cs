@@ -4,11 +4,11 @@ using System.Collections;
 [System.Serializable]
 public class Buttons
 {
-	public KeyCode player1Left = KeyCode.A;
-	public KeyCode player1Right = KeyCode.D;
-	public KeyCode player1Fire = KeyCode.W;
+	public KeyCode[] Player1Left = { KeyCode.A };
+	public KeyCode[] Player1Right = { KeyCode.C, KeyCode.D };
+	public KeyCode[] Player1Fire = { KeyCode.DownArrow, KeyCode.W };
 
-	public KeyCode player2Left = KeyCode.LeftArrow;
-	public KeyCode[] player2Right = new KeyCode[] {KeyCode.Hash, KeyCode.Slash};
-	public KeyCode player2Fire = KeyCode.UpArrow;
+	public KeyCode[] Player2Left = { KeyCode.I, KeyCode.LeftArrow };
+	public KeyCode[] Player2Right = { KeyCode.RightArrow, KeyCode.Hash, KeyCode.Slash };
+	public KeyCode[] Player2Fire = { KeyCode.K,  KeyCode.UpArrow };
 }
