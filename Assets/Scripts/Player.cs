@@ -6,9 +6,6 @@ public static class Player
 	public static PlayerController one;
 	public static PlayerController two;
 
-	public static float xBorder = 6F;
-	public static float yBorder = 4.7F;
-
 	public static PlayerController GetOtherPlayer(string str)
 	{
 		if (str == "Player1")
