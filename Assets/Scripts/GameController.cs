@@ -6,7 +6,6 @@ public class GameController : MonoBehaviour
 { 	
 	public GameObject startScreen;
 	public GameObject winScreen;
-	public float timeToDisplay = 1f;
 	public float timeToReset = 2f;
 	public GameObject splashScreen;
 	public ChangeImage imagePl1;
@@ -34,7 +33,7 @@ public class GameController : MonoBehaviour
 			{
 				LoadRandomScene();
 			}
-			else if (Time.timeScale  < 1)
+			else
 			{
 				StartGame();
 			}
@@ -68,27 +67,17 @@ public class GameController : MonoBehaviour
 		{
 			winScreen.transform.rotation = Quaternion.Euler( Vector3.forward * 180f);
 		}
-		StartCoroutine(TimerToDisplayStart());
-	}
-
-	private IEnumerator TimerToDisplayStart()
-	{
-		isResetting = true;
-
-		for (float i = 0; i < timeToReset; i += 1f / 60f)
-		{
-			yield return null;
-		}
-		DisplayStartScreen();
 		StartCoroutine(TimerToReset());
 	}
 
 	private IEnumerator TimerToReset()
 	{
+		isResetting = true;
 		for (float i = 0; i < timeToReset; i += 1f / 60f)
 		{
 			yield return null;
 		}
+		isResetting = false;
 		LoadRandomScene();
 	}
 
