@@ -4,6 +4,7 @@ using System.Collections;
 public class LifeController : MonoBehaviour
 {
 	public GameController gc;
+	public WinCounterController WinCunter;
 	public int lifepoints = 1;
 	
 	public void Start()
@@ -14,10 +15,10 @@ public class LifeController : MonoBehaviour
 	public void UpdateLife()
 	{
 		--lifepoints;
-		//print(this.tag + " has " + lifepoints + " Life left");
 		if ( lifepoints <= 0 )
 		{
 			gc.DisplayWinScreen(this.tag);
+			WinCunter.IncreaseWins();
 		}
 	}
 }

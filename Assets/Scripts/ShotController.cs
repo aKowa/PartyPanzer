@@ -1,18 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ShotController : MonoBehaviour {
-
+public class ShotController : MonoBehaviour
+{
+	public float PushForce = 1f;
 	public float explosionScale = 2F;
 	public GameObject boom;
 
 	private LifeController lc;
 	private Animator anim;
+	private Rigidbody2D rigid;
 
  	private void Start()
 	{
 		lc = this.transform.parent.GetComponent<LifeController>();
 		anim = this.GetComponent<Animator>();
+ 		rigid = this.GetComponent<Rigidbody2D>();
 	}
 
 	private void Update()
@@ -24,7 +27,11 @@ public class ShotController : MonoBehaviour {
 	{
 		if (other.tag != "Missile") return;
 		var mc = other.GetComponent<MissileController>();
-		if (mc.PlayerTag == this.transform.parent.tag) return;
+		if (mc.PlayerTag == this.transform.parent.tag)
+		{
+			rigid.AddForce(other.transform.up * PushForce);
+			return;
+		}
 		StartCoroutine(StartExplosion());
 		lc.UpdateLife();
 		Player.ResetOtherPlayer(this.transform.parent.tag);

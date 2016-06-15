@@ -99,6 +99,6 @@ public class GameController : MonoBehaviour
 		Logger.consequitiveSessions++;
 		Logger.totalPlaytime += Time.time;
 		Logger.SetLog();
-		SceneManager.LoadScene(Random.Range(0, SceneManager.sceneCountInBuildSettings));
+		SceneManager.LoadScene(Random.Range(1, SceneManager.sceneCountInBuildSettings));
 	}
 }
