@@ -50,7 +50,6 @@
      <Compile Include="Assets\Scripts\ChangeImage.cs" />
      <Compile Include="Assets\Scripts\ConsoleText.cs" />
      <Compile Include="Assets\Scripts\DancefloorController.cs" />
-     <Compile Include="Assets\Scripts\DemoButtons.cs" />
      <Compile Include="Assets\Scripts\ExtensionMethods.cs" />
      <Compile Include="Assets\Scripts\FireController.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
