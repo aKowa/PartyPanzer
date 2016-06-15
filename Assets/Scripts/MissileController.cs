@@ -3,34 +3,34 @@ using System.Collections;
 
 public class MissileController : MonoBehaviour 
 {
-    public float speed = 3F;
-    public string playerTag = "Player";
-	public float explosionScale = 2F;
-	private Animator anim;
-	private bool hasHit = false;
+    public float Speed = 3F;
+    public string PlayerTag = "Player";
+	public float ExplosionScale = 2F;
+	private Animator _anim;
+	private bool _hasHit = false;
 
-	void Start()
+	private void Start()
 	{
-		anim = GetComponent<Animator>();
+		_anim = GetComponent<Animator>();
 	}
 
-	void Update () 
+	private void Update () 
 	{
-		if (!hasHit)
+		if (!_hasHit)
 		{
-			transform.position += transform.up * speed * Time.deltaTime;
+			transform.position += transform.up * Speed * Time.deltaTime;
 		}
 	}
 
-    void OnTriggerEnter2D(Collider2D other)
+	private void OnTriggerEnter2D(Collider2D other)
     {
-		if(other.tag != playerTag && other.tag != "Border")
+		if(other.tag != PlayerTag && other.tag != "Border")
 		{
 			StartCoroutine(StartExplosion());
 		}
     }
 
-    void OnTriggerExit2D(Collider2D other)
+	private void OnTriggerExit2D(Collider2D other)
     {
         if (other.tag == "Border")
         {
@@ -38,12 +38,12 @@ public class MissileController : MonoBehaviour
         }
     }
 
-	IEnumerator StartExplosion()
+	private IEnumerator StartExplosion()
 	{
-		hasHit = true;
-		anim.Play("Explosion1");
+		_hasHit = true;
+		_anim.Play("Explosion1");
 		this.GetComponent<BoxCollider2D>().enabled = false;
-		this.transform.localScale = Vector3.one * explosionScale;
+		this.transform.localScale = Vector3.one * ExplosionScale;
 		yield return new WaitForSeconds(1f);
 		Destroy(this.gameObject);
 	}

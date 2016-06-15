@@ -24,7 +24,7 @@ public class ShotController : MonoBehaviour {
 	{
 		if (other.tag != "Missile") return;
 		var mc = other.GetComponent<MissileController>();
-		if (mc.playerTag == this.transform.parent.tag) return;
+		if (mc.PlayerTag == this.transform.parent.tag) return;
 		StartCoroutine(StartExplosion());
 		lc.UpdateLife();
 		Player.ResetOtherPlayer(this.transform.parent.tag);

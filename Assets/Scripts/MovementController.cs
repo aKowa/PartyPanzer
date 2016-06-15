@@ -1,32 +1,26 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent( typeof(Rigidbody2D), typeof(Animator), typeof(HitController) )]
 public class MovementController : MonoBehaviour
 {
-    public float moveSpeed = 1F;
-    public float rotateSpeed = 60F;
-    private Transform leftRotator;
-    private Transform rightRotator;
-	private Animator anim;
+    public float MoveSpeed = 3F;
+    public float RotateSpeed = 60F;
+	private Rigidbody2D _rigid;
+	private Animator _anim;
+	private HitController _hit;
 
 	private void Awake()
-    {
-		leftRotator = transform.FindChild("left_tread");
-		rightRotator = transform.FindChild("right_tread");
-        if ( leftRotator == null || rightRotator == null )
-        {
-            Debug.LogError("Could not find child object");
-		}
-
-		anim = GetComponent<Animator>();
-		if (anim == null)
-		{
-			Debug.LogError("Could not get animator. Not assigned on: " + this.gameObject.name + "?");
-		}
-    }
+	{
+		_rigid = this.GetComponentInChildren<Rigidbody2D>();
+		_anim = this.GetComponent<Animator>();
+		_hit = this.GetComponent<HitController>();
+	}
 
 	private void Update()
 	{
+		if (_hit.WasHit) return;
+
 		var left = false;
 		var right = false;
 
@@ -42,37 +36,36 @@ public class MovementController : MonoBehaviour
 				break;
 		}
 
-        if (left && right )
-        {
-			var targetPosition = transform.position + transform.up * moveSpeed * Time.deltaTime;
-			transform.position = targetPosition.ClampToBorder();
-			anim.SetBool("LeftTread", true);
-			anim.SetBool("RightTread", true);
-		}
-		else if (anim.GetBool("LeftTread") && anim.GetBool("RightTread"))
+		_anim.SetBool("LeftTread", left);
+		_anim.SetBool("RightTread", right);
+
+		if (left && right)
 		{
-			anim.SetBool("LeftTread", false);
-			anim.SetBool("RightTread", false);
+			_rigid.angularVelocity = 0;
+			_rigid.velocity = (Vector2) this.transform.up*MoveSpeed;
+			return;
 		}
 
-        else if (left)
-        {
-			transform.Rotate(Vector3.back, rotateSpeed * Time.deltaTime);
-			anim.SetBool("LeftTread", true);
-        }
-		else if (anim.GetBool("LeftTread"))
+		if (left || right)
 		{
-			anim.SetBool("LeftTread", false);
+			_rigid.velocity = Vector2.zero;
+			_rigid.angularVelocity = left ? RotateSpeed : RotateSpeed*-1;
+			return;
 		}
 
-        else if (right)
-        {
-			transform.Rotate(Vector3.back, -1 * rotateSpeed * Time.deltaTime);
-			anim.SetBool("RightTread", true);
-        }
-		else if (anim.GetBool("RightTread"))
-		{
-			anim.SetBool("RightTread", false);
-		}
-    }
+		ResetMovement();
+	}
+
+	public void ResetMovement()
+	{
+		_rigid.velocity = Vector2.zero;
+		_rigid.angularVelocity = 0;
+	}
+
+	public void ResetAll()
+	{
+		ResetMovement();
+		StopCoroutine(_hit.BlockMovementForSec());
+		_hit.WasHit = false;
+	}
 }

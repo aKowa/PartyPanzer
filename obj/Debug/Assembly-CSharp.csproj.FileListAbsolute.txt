@@ -19,3 +19,5 @@ C:\Users\Schnuffel\OneDrive\Game Design\TankDancer - Prototype\Temp\bin\Debug\Un
 C:\Users\Schnuffel\OneDrive\Game Design\TankDancer - Prototype\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 C:\Users\Schnuffel\OneDrive\Game Design\TankDancer - Prototype\obj\Debug\Assembly-CSharp.dll
 C:\Users\Schnuffel\OneDrive\Game Design\TankDancer - Prototype\obj\Debug\Assembly-CSharp.pdb
+E:\Studium16\GameProduktion1\Project\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+E:\Studium16\GameProduktion1\Project\obj\Debug\Assembly-CSharp.dll

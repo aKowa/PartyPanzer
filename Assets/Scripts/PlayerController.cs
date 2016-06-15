@@ -1,17 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {
 	[HideInInspector]
-	public Vector3 initPosition;
+	public Vector3 InitPosition;
 	[HideInInspector]
-	public Quaternion initRotation;
+	public Quaternion InitRotation;
+
+	private MovementController _movement;
 
 	private void Start ()
 	{
-		initPosition = this.transform.position;
-		initRotation = this.transform.rotation;
+		InitPosition = this.transform.position;
+		InitRotation = this.transform.rotation;
+		_movement = this.GetComponent<MovementController>();
 
 		if (this.tag == "Player1")
 		{
@@ -25,7 +29,8 @@ public class PlayerController : MonoBehaviour
 
 	public void Reset()
 	{
-		this.transform.position = this.initPosition;
-		this.transform.rotation = this.initRotation;
+		_movement.ResetAll();
+		this.transform.position = this.InitPosition;
+		this.transform.rotation = this.InitRotation;
 	}
 }

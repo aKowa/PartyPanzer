@@ -45,7 +45,7 @@ public class FireController : MonoBehaviour
 	    if (clone != null)
 	    {
 		    var ms = clone.GetComponent<MissileController>();
-		    ms.playerTag = this.tag;
+		    ms.PlayerTag = this.tag;
 	    }
 	    anim.Play("TankFire",2);
     }
