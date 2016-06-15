@@ -11,7 +11,7 @@ public class TitleRotation : MonoBehaviour {
 		StartCoroutine ( Rotation () );
 	}
 
-	private IEnumerator Rotation ()
+	IEnumerator Rotation ()
 	{
 		for (float i = 0; i < 1; i += Speed / 60)
 		{
