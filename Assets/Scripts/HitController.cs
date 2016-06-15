@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent(typeof(Rigidbody2D), typeof(MovementController))]
+[RequireComponent(typeof(Rigidbody2D))]
 public class HitController : MonoBehaviour
 {
 	public float PenaltyTime = 1F;
