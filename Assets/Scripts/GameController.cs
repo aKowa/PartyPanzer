@@ -10,12 +10,12 @@ public class GameController : MonoBehaviour
 	public GameObject splashScreen;
 	public ChangeImage imagePl1;
 	public ChangeImage imagePl2;
-	private bool isResetting = false;
+	private static bool isResetting;
 
 	private void Start ()
 	{
 		winScreen.SetActive(false);
-		DisplayStartScreen();
+		DisplayStartScreen ();
 		isResetting = false;
 	}
 
@@ -35,7 +35,7 @@ public class GameController : MonoBehaviour
 			}
 			else
 			{
-				StartGame();
+				StartGame ();
 			}
 		}
 	}
