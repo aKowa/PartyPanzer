@@ -3,9 +3,12 @@ using System.Collections;
 
 public class FireController : MonoBehaviour
 {	
+	[Tooltip("The time in seconds needed to reload.")]
     public float fireRate = 1F;
-    public GameObject missile;
-    private Transform launcher;
+	[Tooltip ( "The missile game object to instanciate, when fired." )]
+	public GameObject missile;
+
+	private Transform launcher;
     private bool canFire = true;
 	private Animator anim;
 
@@ -19,6 +22,9 @@ public class FireController : MonoBehaviour
         }
 
 		anim = GetComponent<Animator>();
+
+		if (anim == null) return;
+		anim.SetFloat ( "SpeedMultiplier", 1f / fireRate );
     }
 
 	private void Update()
@@ -47,6 +53,7 @@ public class FireController : MonoBehaviour
         canFire = true;
     }
 
+	// Instantiates the missile and playes animation
 	private void Fire()
 	{
 		var clone = Instantiate ( missile, launcher.position, launcher.rotation ) as GameObject;
