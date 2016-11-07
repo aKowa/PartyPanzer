@@ -19,7 +19,7 @@ public class MovementController : MonoBehaviour
 
 	private void Update()
 	{
-		if (_hit.WasHit) return;
+		if (_hit.wasHit) return;
 
 		var left = false;
 		var right = false;
@@ -42,14 +42,14 @@ public class MovementController : MonoBehaviour
 		if (left && right)
 		{
 			_rigid.angularVelocity = 0;
-			_rigid.velocity = (Vector2) this.transform.up*MoveSpeed;
+			_rigid.velocity = (Vector2) this.transform.up * MoveSpeed * Time.deltaTime;
 			return;
 		}
 
 		if (left || right)
 		{
 			_rigid.velocity = Vector2.zero;
-			_rigid.angularVelocity = left ? RotateSpeed : RotateSpeed*-1;
+			_rigid.angularVelocity = left ? RotateSpeed * Time.deltaTime : RotateSpeed * -1 * Time.deltaTime;
 			return;
 		}
 
@@ -66,6 +66,6 @@ public class MovementController : MonoBehaviour
 	{
 		ResetMovement();
 		StopCoroutine(_hit.BlockMovementForSec());
-		_hit.WasHit = false;
+		_hit.wasHit = false;
 	}
 }

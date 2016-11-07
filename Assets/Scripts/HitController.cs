@@ -4,32 +4,32 @@ using System.Collections;
 [RequireComponent(typeof(Rigidbody2D))]
 public class HitController : MonoBehaviour
 {
-	public float PenaltyTime = 1F;
-	public float PushForce = 1F;
-	public float Torque = 50f;
-	public float TorqueAdd = 10f;
+	public float penaltyTime = 1F;
+	public float pushForce = 1F;
+	public float torque = 50f;
+	public float torqueAdd = 10f;
 	[HideInInspector]
-	public bool WasHit;
-	private Rigidbody2D _rigid;
+	public bool wasHit;
+	private Rigidbody2D rigid;
 
 	public void Awake ()
 	{
-		_rigid = this.GetComponent<Rigidbody2D>();
+		rigid = this.GetComponent<Rigidbody2D>();
 	}
 
 	private void OnTriggerEnter2D ( Collider2D other )
 	{
-		if (other.tag != "Missile" || WasHit) return;
+		if (other.tag != "Missile" || wasHit) return;
 		StartCoroutine(BlockMovementForSec());
-		_rigid.AddForce(other.transform.up * PushForce);
-		_rigid.AddTorque(Torque);
-		Torque += TorqueAdd;
+		rigid.AddForce(other.transform.up * pushForce);
+		rigid.AddTorque(torque);
+		torque += torqueAdd;
 	}
 
 	public IEnumerator BlockMovementForSec()
 	{
-		WasHit = true;
-		yield return new WaitForSeconds(PenaltyTime);
-		WasHit = false;
+		wasHit = true;
+		yield return new WaitForSeconds(penaltyTime);
+		wasHit = false;
 	}
 }
